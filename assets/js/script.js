@@ -2,6 +2,35 @@
   "use strict";
 
   const toastEl = document.getElementById("toast");
+  const navToggle = document.getElementById("navToggle");
+  const primaryNavigation = document.getElementById("primaryNavigation");
+
+  document.documentElement.classList.add("js");
+
+  const revealElements = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    revealElements.forEach((element) => revealObserver.observe(element));
+  } else {
+    revealElements.forEach((element) => element.classList.add("visible"));
+  }
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = primaryNavigation.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  primaryNavigation.addEventListener("click", (e) => {
+    if (!e.target.matches("a")) return;
+    primaryNavigation.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  });
 
   const carouselPlants = PLANTS.slice(-5);
   let currentIndex = carouselPlants.length - 1;
@@ -43,7 +72,7 @@
     const heroArt = document.getElementById("heroArt");
     heroArt.style.background = plant.image ? "transparent" : plant.color + "22";
     heroArt.innerHTML = plant.image
-      ? `<img src="${plant.image}" alt="${plant.name}" loading="eager">`
+      ? `<img src="${plant.image}" alt="${plant.name}" loading="lazy">`
       : leafSVG(plant.color);
 
     // Stock / order button state
@@ -106,7 +135,7 @@
 
   // Swipe support for touch devices
   (function enableSwipe() {
-    const zone = document.getElementById("home");
+    const zone = document.getElementById("featured");
     let startX = null;
     zone.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
     zone.addEventListener("touchend", (e) => {
