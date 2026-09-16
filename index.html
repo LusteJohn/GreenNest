@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understory — new plant drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#" class="logo">Understory</a>
+    <a href="#order" class="btn-small">Order this plant</a>
+  </div>
+</header>
+
+<!-- Everything below is filled in by plant-config.js so the shop owner
+     only ever has to edit ONE file to feature a different plant. -->
+
+<section class="hero" id="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-art-col">
+      <button class="carousel-arrow arrow-prev" id="arrowPrev" aria-label="Previous plant">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+      <button class="carousel-arrow arrow-next" id="arrowNext" aria-label="Next plant">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <div class="hero-copy">
+      <p class="hero-kicker" id="kicker">New this week</p>
+      <h1 id="plantName">Loading…</h1>
+      <p class="hero-tagline" id="tagline"></p>
+      <div class="hero-price-row">
+        <span class="price" id="price"></span>
+        <span class="stock" id="stock"></span>
+      </div>
+      <a href="#order" class="btn-primary">Order this plant</a>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="details">
+  <div class="wrap details-inner">
+    <div class="details-copy">
+      <h2>About this one</h2>
+      <p id="description"></p>
+    </div>
+    <div class="facts-grid" id="factsGrid"></div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <h2>A closer look</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ORDER / INQUIRY -->
+<section class="order" id="order">
+  <div class="wrap order-inner">
+    <div>
+      <h2>Want one?</h2>
+      <p class="order-sub">Fill this in and we'll message you back to confirm size, pot style, and delivery — usually within a day.</p>
+      <ul class="order-channels" id="orderChannels"></ul>
+    </div>
+    <form id="orderForm" class="order-form">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Contact (phone or email)
+        <input type="text" name="contact" required>
+      </label>
+      <label>
+        Quantity
+        <input type="number" name="qty" min="1" value="1" required>
+      </label>
+      <label>
+        Note (optional)
+        <textarea name="note" rows="3" placeholder="Delivery area, preferred pot color, questions…"></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Send order request</button>
+      <p class="form-note">This form doesn't connect to anything live yet — see the comment in script.js for how to wire it up.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p class="logo">Understory</p>
+    <p class="footer-copy">© 2026 Understory Plant Co. · One greenhouse, Cebu.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/plant/plant-config.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
