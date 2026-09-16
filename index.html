@@ -1,108 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Understory — new plant drop</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GreenNest is a small Sagay greenhouse offering thoughtfully grown houseplants, flowering plants, and simple plant care.">
+  <meta name="theme-color" content="#f5f2ea">
+  <title>GreenNest | Plants with a story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a href="#" class="logo">Understory</a>
-    <a href="#order" class="btn-small">Order this plant</a>
-  </div>
-</header>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a href="#home" class="logo" aria-label="GreenNest home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-4.2-2.1-7-5.4-7-9.2C5 7.4 8.1 4 12 3c3.9 1 7 4.4 7 8.8 0 3.8-2.8 7.1-7 9.2Z" stroke="currentColor" stroke-width="1.7"/><path d="M12 21V9m0 0c-1.7-.2-3-1.4-3.5-3m3.5 3c1.7-.2 3-1.4 3.5-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <span>GreenNest</span>
+      </a>
 
-<!-- Everything below is filled in by plant-config.js so the shop owner
-     only ever has to edit ONE file to feature a different plant. -->
-
-<section class="hero" id="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-art-col">
-      <button class="carousel-arrow arrow-prev" id="arrowPrev" aria-label="Previous plant">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNavigation" aria-label="Open menu">
+        <span></span><span></span>
       </button>
-      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
-      <button class="carousel-arrow arrow-next" id="arrowNext" aria-label="Next plant">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-      </button>
+
+      <nav class="primary-nav" id="primaryNavigation" aria-label="Primary navigation">
+        <a href="#featured">Featured</a>
+        <a href="#story">Our story</a>
+        <a href="#collections">Collections</a>
+        <a href="#care">Plant care</a>
+        <a href="#visit">Visit us</a>
+      </nav>
+
+      <a href="#order" class="btn btn-small header-cta">Order a plant</a>
     </div>
-    <div class="hero-copy">
-      <p class="hero-kicker" id="kicker">New this week</p>
-      <h1 id="plantName">Loading…</h1>
-      <p class="hero-tagline" id="tagline"></p>
-      <div class="hero-price-row">
-        <span class="price" id="price"></span>
-        <span class="stock" id="stock"></span>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="eyebrow-dot" aria-hidden="true"></span> A small greenhouse in Sagay</p>
+          <h1 id="hero-title" class="reveal">Bring the outside <em>in.</em></h1>
+          <p class="hero-intro reveal">Thoughtfully grown plants for bright corners, quiet desks, and the people who are still learning how to keep things alive.</p>
+          <div class="hero-actions reveal">
+            <a href="#featured" class="btn btn-primary">Meet this week’s drop</a>
+            <a href="#story" class="btn btn-secondary">Read our story</a>
+          </div>
+          <dl class="hero-stats reveal">
+            <div><dt>10+</dt><dd>plant varieties</dd></div>
+            <div><dt>100%</dt><dd>grown with care</dd></div>
+            <div><dt>24h</dt><dd>reply target</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-art-frame">
+            <button class="carousel-arrow arrow-prev" id="arrowPrev" type="button" aria-label="Previous plant">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="hero-art" id="heroArt" role="img" aria-label="Featured plant"></div>
+            <button class="carousel-arrow arrow-next" id="arrowNext" type="button" aria-label="Next plant">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="visual-note"><span class="pulse-dot" aria-hidden="true"></span> Fresh from the greenhouse</div>
+          <div class="visual-scribble" aria-hidden="true">
+            <svg viewBox="0 0 220 120" fill="none"><path d="M8 98c32-8 43-38 75-43 27-4 42 17 67 10 18-5 31-22 57-22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 9"/></svg>
+          </div>
+        </div>
       </div>
-      <a href="#order" class="btn-primary">Order this plant</a>
-      <div class="carousel-dots" id="carouselDots"></div>
+
+      <div class="wrap hero-foot reveal">
+        <span>Scroll to explore</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+        <span>Plants, care, and a little calm</span>
+      </div>
+    </section>
+
+    <section class="section featured" id="featured" aria-labelledby="featured-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Featured drop</p>
+            <h2 id="featured-title">One plant, many ways to grow.</h2>
+            <p class="section-intro">A little context before you commit. Every featured plant comes with the light, water, and personality notes you actually need.</p>
+          </div>
+          <a href="#order" class="text-link">Reserve a plant <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <article class="plant-panel reveal">
+          <div class="plant-panel-copy">
+            <p class="plant-kicker" id="kicker">New this week</p>
+            <h3 class="plant-name" id="plantName">Loading…</h3>
+            <p class="plant-tagline" id="tagline"></p>
+            <div class="plant-meta"><span class="price" id="price"></span><span class="stock" id="stock"></span></div>
+            <a href="#order" class="btn btn-primary plant-order-link">Order this plant</a>
+            <div class="carousel-dots" id="carouselDots" aria-label="Choose a featured plant"></div>
+          </div>
+          <div class="plant-panel-details">
+            <div class="details-copy">
+              <p class="mini-label">Good to know</p>
+              <p id="description"></p>
+            </div>
+            <div class="facts-grid" id="factsGrid"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery-section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="eyebrow">A closer look</p>
+            <h2 id="gallery-title">The details are the good part.</h2>
+          </div>
+          <p>Shapes, textures, and the small imperfections that make a plant feel like yours.</p>
+        </div>
+        <div class="gallery-grid reveal" id="galleryGrid"></div>
+        <p class="gallery-note reveal">Every plant is checked, cleaned, and prepared for the journey home.</p>
+      </div>
+    </section>
+
+    <section class="section story" id="story" aria-labelledby="story-title">
+      <div class="wrap story-grid">
+        <div class="story-visual reveal">
+          <img class="story-img story-img-main" src="assets/images/indoor/monstera_deliciosa.jpeg" alt="Monstera deliciosa growing in the Understory greenhouse">
+          <img class="story-img story-img-small" src="assets/images/indoor/golden_pothos.jpeg" alt="Golden pothos with trailing green leaves">
+          <div class="story-badge"><span class="badge-mark" aria-hidden="true">✦</span><span>Grown slowly.<br>Shared generously.</span></div>
+        </div>
+        <div class="story-copy reveal">
+          <p class="eyebrow">Our story</p>
+          <h2 id="story-title">Rooted in the everyday joy of green.</h2>
+          <p>GreenNest began with a few pots on a Sagay windowsill and a simple belief: the right plant can make a room feel more like home. Today, we grow and gather resilient favorites for first-time plant parents and seasoned collectors alike.</p>
+          <ul class="story-list">
+            <li><span class="story-number">01</span><div><strong>Chosen with context.</strong><p>We match each plant to the light and rhythm of real homes, not just a pretty shelf.</p></div></li>
+            <li><span class="story-number">02</span><div><strong>Prepared for the journey.</strong><p>Every plant gets a quick health check and practical care notes before it leaves the greenhouse.</p></div></li>
+            <li><span class="story-number">03</span><div><strong>Here after the sale.</strong><p>Send us a photo or a question. We are happy to help your new green companion settle in.</p></div></li>
+          </ul>
+          <a href="#visit" class="text-link">Visit the greenhouse <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section collections" id="collections" aria-labelledby="collections-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Find your match</p>
+            <h2 id="collections-title">A plant for every kind of space.</h2>
+            <p class="section-intro">Start with the mood you want, then let the leaves do the rest.</p>
+          </div>
+        </div>
+        <div class="collection-grid">
+          <a class="collection-card reveal" href="#order">
+            <div class="card-media"><img src="assets/images/flowering_plants/bougainvillea.jpeg" alt="Vibrant bougainvillea flowers" loading="lazy"><span class="card-index">01</span></div>
+            <div class="card-body"><div class="card-top"><span class="card-label">Flowering plants</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Color that stays.</h3><p>Bright blooms and expressive foliage for the corners that need a little celebration.</p><span class="card-link">Explore flowering plants</span></div>
+          </a>
+          <a class="collection-card reveal" href="#order">
+            <div class="card-media"><img src="assets/images/indoor/chinese_evergreen.jpeg" alt="Chinese evergreen with patterned green leaves" loading="lazy"><span class="card-index">02</span></div>
+            <div class="card-body"><div class="card-top"><span class="card-label">Indoor greens</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Quietly resilient.</h3><p>Easygoing companions that bring a soft, lived-in feeling to desks, shelves, and corners.</p><span class="card-link">Explore indoor greens</span></div>
+          </a>
+          <a class="collection-card reveal" href="#order">
+            <div class="card-media"><img src="assets/images/succulents/zebra_haworthia.jpeg" alt="Zebra haworthia succulent" loading="lazy"><span class="card-index">03</span></div>
+            <div class="card-body"><div class="card-top"><span class="card-label">Small &amp; mighty</span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Big character, little footprint.</h3><p>Compact favorites for windowsills, gifts, and the delightfully low-maintenance.</p><span class="card-link">Explore small plants</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section care" id="care" aria-labelledby="care-title">
+      <div class="wrap care-grid">
+        <div class="care-intro reveal">
+          <p class="eyebrow">Plant care, made simple</p>
+          <h2 id="care-title">A greener thumb starts with a good plan.</h2>
+          <p>You do not need perfect conditions or a long checklist. Notice a little, adjust gently, and let your plant show you the way.</p>
+          <a href="#order" class="btn btn-secondary">Ask us about a plant</a>
+        </div>
+        <div class="care-list">
+          <article class="care-item reveal"><span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><h3>Start with light.</h3><p>Watch how the sun moves through your space, then choose a plant that fits the brightness you actually have.</p></div></article>
+          <article class="care-item reveal"><span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c2.5 3.2 5 6 5 9a5 5 0 0 1-10 0c0-3 2.5-5.8 5-9Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2 2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><h3>Water with intention.</h3><p>Check the soil before you reach for the can. Most plants prefer a thoughtful drink to a fixed schedule.</p></div></article>
+          <article class="care-item reveal"><span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17c3-1 4-3 4-6m8 6c-3-1-4-3-4-6m-4 10h8M12 4v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><h3>Give it time.</h3><p>New leaves and small changes are progress. A plant is a relationship, not a one-day project.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap visit-inner">
+        <div class="visit-copy reveal">
+          <p class="eyebrow">Come say hello</p>
+          <h2 id="visit-title">Find your next companion in person.</h2>
+          <p>Walk in, tell us about your space, and leave with a plant that feels like a good fit. No pressure, no jargon—just a little time among the leaves.</p>
+          <div class="visit-details">
+            <div><span class="detail-icon" aria-hidden="true">◉</span><div><strong>Where</strong><span>Sagay City, Philippines</span></div></div>
+            <div><span class="detail-icon" aria-hidden="true">◷</span><div><strong>Hours</strong><span>Wednesday–Sunday · 9:00 AM–5:00 PM</span></div></div>
+            <div><span class="detail-icon" aria-hidden="true">✦</span><div><strong>Good to know</strong><span>Walk-ins welcome · Message us for large picks</span></div></div>
+          </div>
+        </div>
+        <div class="visit-visual reveal">
+          <img src="assets/images/tropical_plants/areca_palm.jpeg" alt="Areca palm fronds in warm light" loading="lazy">
+          <div class="visit-card"><strong>Open this week</strong><span>Bring home a little calm</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order" id="order" aria-labelledby="order-title">
+      <div class="wrap order-inner">
+        <div class="order-copy reveal">
+          <p class="eyebrow">Ready when you are</p>
+          <h2 id="order-title">Let’s find the right plant for your space.</h2>
+          <p>Tell us a little about what you are looking for. We will message you back to confirm availability, size, pot style, and delivery.</p>
+          <ul class="order-channels" id="orderChannels"></ul>
+          <p class="order-note">Prefer to browse first? Save this page and come back when your corner feels ready.</p>
+        </div>
+        <form id="orderForm" class="order-form reveal">
+          <p class="form-kicker">Order / inquiry</p>
+          <h3>Tell us what you’re looking for.</h3>
+          <label><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+          <label><span>Contact (phone or email)</span><input type="text" name="contact" autocomplete="email" required></label>
+          <label><span>Quantity</span><input type="number" name="qty" min="1" value="1" required></label>
+          <label><span>Note <small>optional</small></span><textarea name="note" rows="3" placeholder="Delivery area, preferred pot color, questions…"></textarea></label>
+          <button type="submit" class="btn btn-primary">Send order request</button>
+          <p class="form-note">We will use your details only to follow up on this request.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Understory home">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-4.2-2.1-7-5.4-7-9.2C5 7.4 8.1 4 12 3c3.9 1 7 4.4 7 8.8 0 3.8-2.8 7.1-7 9.2Z" stroke="currentColor" stroke-width="1.7"/><path d="M12 21V9m0 0c-1.7-.2-3-1.4-3.5-3m3.5 3c1.7-.2 3-1.4 3.5-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>GreenNest</span>
+        </a>
+        <p>Small-batch plants and honest care notes from a little greenhouse in Sagay.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <p class="footer-label">Explore</p>
+        <a href="#featured">Featured plants</a>
+        <a href="#collections">Collections</a>
+        <a href="#care">Plant care</a>
+        <a href="#visit">Visit us</a>
+      </nav>
+      <div class="footer-contact">
+        <p class="footer-label">Say hello</p>
+        <a href="https://m.me/yourshophandle" target="_blank" rel="noopener">Message on Facebook</a>
+        <a href="https://wa.me/639170000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="tel:+639170000000">Call or text</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="details">
-  <div class="wrap details-inner">
-    <div class="details-copy">
-      <h2>About this one</h2>
-      <p id="description"></p>
+    <div class="wrap footer-bottom">
+      <p>© 2026 GreenNest· One greenhouse, Cebu.</p>
+      <a href="#home">Back to top ↑</a>
     </div>
-    <div class="facts-grid" id="factsGrid"></div>
-  </div>
-</section>
+  </footer>
 
-<section class="gallery">
-  <div class="wrap">
-    <h2>A closer look</h2>
-    <div class="gallery-grid" id="galleryGrid"></div>
-  </div>
-</section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- ORDER / INQUIRY -->
-<section class="order" id="order">
-  <div class="wrap order-inner">
-    <div>
-      <h2>Want one?</h2>
-      <p class="order-sub">Fill this in and we'll message you back to confirm size, pot style, and delivery — usually within a day.</p>
-      <ul class="order-channels" id="orderChannels"></ul>
-    </div>
-    <form id="orderForm" class="order-form">
-      <label>
-        Name
-        <input type="text" name="name" required>
-      </label>
-      <label>
-        Contact (phone or email)
-        <input type="text" name="contact" required>
-      </label>
-      <label>
-        Quantity
-        <input type="number" name="qty" min="1" value="1" required>
-      </label>
-      <label>
-        Note (optional)
-        <textarea name="note" rows="3" placeholder="Delivery area, preferred pot color, questions…"></textarea>
-      </label>
-      <button type="submit" class="btn-primary">Send order request</button>
-      <p class="form-note">This form doesn't connect to anything live yet — see the comment in script.js for how to wire it up.</p>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap footer-inner">
-    <p class="logo">Understory</p>
-    <p class="footer-copy">© 2026 Understory Plant Co. · One greenhouse, Cebu.</p>
-  </div>
-</footer>
-
-<div class="toast" id="toast"></div>
-
-<script src="assets/js/plant/plant-config.js"></script>
-<script src="assets/js/script.js"></script>
+  <script src="assets/js/plant/plant-config.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

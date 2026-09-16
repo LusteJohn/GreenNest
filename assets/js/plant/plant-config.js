@@ -17,6 +17,7 @@ const PLANTS = [
     currency: "₱",
     stock: 0,
     color: "#6E8A5A",
+    image: "assets/images/succulents/zebra_haworthia.jpeg",
     description:
       "Sold out for now, but a new batch is coming from the greenhouse in about three weeks. " +
       "Message us if you want to be first in line when it's back.",
@@ -38,6 +39,7 @@ const PLANTS = [
     currency: "₱",
     stock: 2,
     color: "#3E5C39",
+    image: "assets/images/indoor/peace_lily.jpeg",
     description:
       "A forgiving flowering plant for a low-light corner. It tells you exactly when it needs water by " +
       "drooping, so it's hard to accidentally kill this one.",
@@ -60,6 +62,7 @@ const PLANTS = [
     currency: "₱",
     stock: 5,
     color: "#7B52AE",
+    image: "assets/images/flowering_plants/african_violet.jpeg",
     description:
       "A classic indoor favorite known for its continuous clusters of colorful blossoms. Thrives best under gentle indoor lighting with careful watering from the bottom to protect its delicate leaves.",
     facts: [
@@ -80,6 +83,7 @@ const PLANTS = [
     currency: "₱",
     stock: 4,
     color: "#D9534F",
+    image: "assets/images/flowering_plants/begonia.jpeg",
     description:
       "Valued for both its colorful foliage and blossoms. It adds a vibrant pop of character to your collection and thrives nicely in humid indoor environments with moderate watering.",
     facts: [
@@ -100,6 +104,7 @@ const PLANTS = [
     currency: "₱",
     stock: 3,
     color: "#E83E8C",
+    image: "assets/images/flowering_plants/bougainvillea.jpeg",
     description:
       "A sun-loving ornamental favorite that creates an eye-catching tropical display. Thrives best when placed near a sun-drenched window or outdoor patio.",
     facts: [
@@ -120,6 +125,7 @@ const PLANTS = [
     currency: "₱",
     stock: 4,
     color: "#FD7E14",
+    image: "assets/images/flowering_plants/hibiscus.jpg",
     description:
       "Famous for its show-stopping, large petals and rich tropical appeal. Loves soaking up plenty of sunlight and regular drinks to produce continuous seasonal blooms.",
     facts: [
@@ -140,6 +146,7 @@ const PLANTS = [
     currency: "₱",
     stock: 3,
     color: "#BA55D3",
+    image: "assets/images/flowering_plants/orchid.jpeg",
     description:
       "An exquisite statement piece featuring long-lasting elegance. Prefers specialized bark mixes and indirect lighting to keep its root system healthy and blooming.",
     facts: [
@@ -161,6 +168,7 @@ const PLANTS = [
     currency: "₱",
     stock: 7,
     color: "#20C997",
+    image: "assets/images/indoor/chinese_evergreen.jpeg",
     description:
       "One of the toughest and most resilient indoor house plants available. Handles low-light conditions wonderfully and forgives occasional missed waterings.",
     facts: [
@@ -181,6 +189,7 @@ const PLANTS = [
     currency: "₱",
     stock: 6,
     color: "#3F5D3A",
+    image: "assets/images/indoor/monstera_deliciosa.jpeg",
     description:
       "This one's been growing in our greenhouse for about a year, so it's already used to indoor light " +
       "and won't sulk when it gets to your place. Comes in a 6-inch nursery pot, roughly knee-height including " +
@@ -203,6 +212,7 @@ const PLANTS = [
     currency: "₱",
     stock: 10,
     color: "#A2D2FF",
+    image: "assets/images/indoor/golden_pothos.jpeg",
     description:
       "An exceptional starter plant that trails beautifully down bookshelves or hanging baskets. Thrives in almost any indoor lighting condition with minimal fuss.",
     facts: [

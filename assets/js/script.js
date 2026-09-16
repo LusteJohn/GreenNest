@@ -1,17 +1,10 @@
-// script.js
-// Reads the PLANTS array + SHOP config from plant-config.js and renders
-// a carousel: hero + details section update together as the owner's
-// visitors page through past and current plant drops.
-//
-// The owner never has to touch this file — only plant-config.js.
-
 (function () {
   "use strict";
 
   const toastEl = document.getElementById("toast");
 
-  // Carousel opens on the LAST entry in PLANTS (assumed newest).
-  let currentIndex = PLANTS.length - 1;
+  const carouselPlants = PLANTS.slice(-5);
+  let currentIndex = carouselPlants.length - 1;
 
   function showToast(msg) {
     toastEl.textContent = msg;
@@ -33,12 +26,12 @@
   }
 
   function renderDots() {
-    const dots = PLANTS.map((_, i) => `<button class="dot${i === currentIndex ? " active" : ""}" data-index="${i}" aria-label="Go to plant ${i + 1}"></button>`).join("");
+    const dots = carouselPlants.map((_, i) => `<button type="button" class="dot${i === currentIndex ? " active" : ""}" data-index="${i}" aria-label="Go to plant ${i + 1}"></button>`).join("");
     document.getElementById("carouselDots").innerHTML = dots;
   }
 
   function render() {
-    const plant = PLANTS[currentIndex];
+    const plant = carouselPlants[currentIndex];
 
     document.title = `Understory — ${plant.name}`;
     document.getElementById("kicker").textContent = plant.kicker;
@@ -47,9 +40,11 @@
     document.getElementById("price").textContent = money(plant);
     document.getElementById("description").textContent = plant.description;
 
-    // Hero art
-    document.getElementById("heroArt").style.background = plant.color + "22";
-    document.getElementById("heroArt").innerHTML = leafSVG(plant.color);
+    const heroArt = document.getElementById("heroArt");
+    heroArt.style.background = plant.image ? "transparent" : plant.color + "22";
+    heroArt.innerHTML = plant.image
+      ? `<img src="${plant.image}" alt="${plant.name}" loading="eager">`
+      : leafSVG(plant.color);
 
     // Stock / order button state
     const stockEl = document.getElementById("stock");
@@ -95,7 +90,7 @@
   }
 
   function goTo(index) {
-    currentIndex = (index + PLANTS.length) % PLANTS.length; // wraps around both ends
+    currentIndex = (index + carouselPlants.length) % carouselPlants.length; // wraps around both ends
     render();
   }
 
@@ -111,7 +106,7 @@
 
   // Swipe support for touch devices
   (function enableSwipe() {
-    const zone = document.getElementById("hero");
+    const zone = document.getElementById("home");
     let startX = null;
     zone.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
     zone.addEventListener("touchend", (e) => {
@@ -146,7 +141,7 @@
   const orderForm = document.getElementById("orderForm");
   orderForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const plant = PLANTS[currentIndex];
+    const plant = carouselPlants[currentIndex];
     if (plant.stock <= 0) {
       showToast("This plant is sold out right now.");
       return;
