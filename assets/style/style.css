@@ -659,6 +659,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer-label{ font-size:0.8rem; font-weight:600; color:var(--moss-dark); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:14px; }
 .site-footer nav, .footer-contact{ display:flex; flex-direction:column; gap:10px; }
 .site-footer nav a, .footer-contact a{ color:#4A5647; text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+.footer-contact a{ display:inline-flex; align-items:center; gap:8px; }
+.footer-contact a svg{ width:18px; height:18px; flex-shrink:0; }
 .site-footer nav a:hover, .footer-contact a:hover{ color:var(--moss); }
 
 .footer-bottom{

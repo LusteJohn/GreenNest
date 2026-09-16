@@ -1,13 +1,3 @@
-// plant-config.js
-//
-// ============================================================
-//  HOW TO ADD A NEW PLANT
-//  Add a new object to the PLANTS array below (copy an existing
-//  one as a template). The newest entry should go LAST — the
-//  carousel opens on the last item and lets people page backward
-//  through older drops. Nothing else needs to change.
-// ============================================================
-
 const PLANTS = [
   {
     name: "Zebra Haworthia",
